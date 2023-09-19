@@ -59,7 +59,7 @@ app.get("/sendmessage", (req, res) => {
   // Emit the message to all clients in the "room1" room
   io.to("room1").emit("messageFromServer", { image: image });
 
-  res.status(200).send("Message sent successfully");
+  res.status(200).send("Message sent successfully...");
 });
 
 app.get("/channelMessage", (req, res) => {
@@ -71,6 +71,19 @@ app.get("/channelMessage", (req, res) => {
   io.to("room1").emit("messageFromServer", { message: message });
 
   res.status(200).send("Message sent successfully to channel");
+});
+
+// Define an API route for checking the password
+app.get("/checkPassword", async (req, res) => {
+  const { password } = req.query;
+
+  // Replace this with your actual password check logic
+  // For demonstration purposes, we'll check against a hardcoded password.
+  if (password === "flavio") {
+    res.status(200).json("correct");
+  } else {
+    res.status(401).json("incorrect");
+  }
 });
 
 const port = process.env.PORT || 443;
