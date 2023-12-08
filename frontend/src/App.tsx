@@ -111,7 +111,7 @@ function App() {
         </header>
       ) : (
         <div>
-          enter password
+          enter password : )
           <input
             type="password"
             placeholder="password"
