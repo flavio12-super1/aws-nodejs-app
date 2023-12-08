@@ -16,7 +16,7 @@ app.get("/pain", (req, res) => {
   res.send("pain");
 });
 
-const port = process.env.PORT || 80; // Listen on port 80
+const port = process.env.PORT || 443; // Listen on port 80
 server.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
